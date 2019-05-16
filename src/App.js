@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import CardContainer from './CardContainer.js';
+import Form from './Form.js';
 
 class App extends Component {
   constructor() {
@@ -18,8 +20,9 @@ class App extends Component {
     .catch(error => console.log('error fetching reservations'))
   }
 
-  setReservations = (reservations) => {
-    this.setState({reservations})
+ setReservations = (reservations) => {
+   this.setState({reservations})
+    
   }
 
 
@@ -32,10 +35,10 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-
+          <Form />
         </div>
         <div className='resy-container'>
-          <CardContainer reservatiosn={this.state.reservations} />
+          <CardContainer reservations={this.state.reservations} />
         </div>
       </div>
     )
